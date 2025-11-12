@@ -1,7 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsInt, IsNotEmpty, IsString, Min } from 'class-validator';
+import { IsInt, IsNotEmpty, IsString, Min, IsUUID } from 'class-validator';
 
-export class CreateProductDto {
+export class ProductDto {
+  @ApiProperty({
+    example: 'a2b1c4d5-e6f7-8901-2345-6789abcdef01',
+    description: 'Унікальний ідентифікатор продукту',
+  })
+  @IsUUID()
+  id?: string;
+
   @ApiProperty({
     example: 'Beautiful Knife',
     description: 'Title for product',

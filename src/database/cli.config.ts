@@ -13,5 +13,5 @@ register({
 export default new DataSource({
   ...commonDatabaseConfig,
   entities: [`${__dirname}/../**/*.entity{.ts,.js}`],
-  migrations: [`${__dirname}/../../migrations/*{.ts,.js}`],
+  migrations: [`${__dirname}/../../migrations/**/*{.ts,.js}`],
 });
